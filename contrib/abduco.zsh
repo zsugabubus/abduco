@@ -4,7 +4,7 @@ typeset -A opt_args
 
 _abduco_sessions() {
   declare -a sessions
-  sessions=( $(abduco | sed '1d;s/.*\t[0-9][0-9]*\t//') )
+  sessions=( $(abduco | sed '1d;s/[^\t]*\t[^\t]*\t//') )
   _describe -t session 'session' sessions
 }
 
